@@ -47,6 +47,18 @@ function varargout = bengalurufig_OutputFcn(hObject, eventdata, handles)
 % Get default command line output from handles structure
 varargout{1} = handles.output;
 
+set(handles.one,'String','');
+set(handles.two,'String','');
+set(handles.three,'String','');
+set(handles.four,'String','');
+set(handles.five,'String','');
+
+
+set(handles.Ben1,'Enable','on');
+set(handles.Ben2,'Enable','on');
+set(handles.Ben3,'Enable','on');
+set(handles.Ben4,'Enable','on');
+set(handles.Ben5,'Enable','on');
 
 % --- Executes on button press in Ben1.
 function Ben1_Callback(hObject, eventdata, handles)
