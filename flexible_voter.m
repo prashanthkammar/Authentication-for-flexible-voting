@@ -5,15 +5,7 @@ conn = database('MySQL','root','');
 %Input Voter ID
 disp("Authentication for Flexible voting ");
 voter_id = input("Enter You voter ID: ", 's');
-  
-for i = 1:4
-    if length(voter_id) ~= 7
-        disp("The voter id entered was invalid ");
-        voter_id = input("Enter You voter ID: ", 's');
-    else
-        break;
-    end
-end
+
 loc = voter_id(1:3) ;
 
 % diplay  voter panel  corresponding to the voter id
@@ -31,7 +23,7 @@ elseif loc == "dwd"
     tablename = {'dharwad'};
     sqlquery = ['select * from dharwad where voterid = ''',voter_id,''''];
 else
-    disp("Invalid");
+    disp("Voter ID doesn't exits in data base");
     return;
 end
 
@@ -41,6 +33,13 @@ status = result.status;
 clc;
 greet = "Hello " + result.name;
 disp(greet);
+
+no_data = isempty(result);
+
+if no_data == 1
+    disp("Voter ID doesn't exits in data base");
+    return;
+end
 
 if status == 1  
     disp("You have voted already");
