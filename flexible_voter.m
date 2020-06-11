@@ -41,10 +41,10 @@ if no_data == 1
     return;
 end
 
-if status == 1  
-    disp("You have voted already");
-    return;
-end
+%if status == 1  
+%    disp("You have voted already");
+%    return;
+%end
 
 disp ('Authenctication Process ');
 password = input('Enter Your password: ','s');
